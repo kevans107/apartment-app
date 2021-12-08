@@ -24,14 +24,15 @@ class Header extends Component {
             <NavLink to="/apartmentindex" className="nav-link">View Apartments</NavLink>
           </ul>
           <ul>
-            <NavLink to="/createaccount" className="nav-link">Create An Account</NavLink>
+          {!logged_in &&
+              <a href={new_user_route}
+              className="nav-link">Sign Up</a>
+          }
           </ul>
           <ul>
             {logged_in &&
               <a href={sign_out_route} className="nav-link">Sign Out</a>
             }
-            </ul>
-            <ul>
             {!logged_in &&
               <a href={sign_in_route} className="nav-link">Sign In</a>
             }

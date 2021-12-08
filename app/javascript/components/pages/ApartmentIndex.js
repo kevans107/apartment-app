@@ -9,7 +9,7 @@ class ApartmentIndex extends Component{
       const { apartments } = this.props
       console.log({apartments})
     return(
-      <div className="page-body">
+        <div className="apartment-index">
         <h1>Available Apartments</h1>
         <br />
         <br />
