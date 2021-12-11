@@ -38,7 +38,7 @@ class ApartmentNew extends Component {
     return (
       <div className="page-body">
         <h3>Add a New Apartment</h3>
-        <div className="cards">
+        <div className="new-form">
             <Form>
               <FormGroup>
                 <Label for="street">
@@ -162,7 +162,7 @@ class ApartmentNew extends Component {
                 />
               </FormGroup>
               <br />
-              <Button onClick={this.handleSubmit}>
+              <Button className="button-new" onClick={this.handleSubmit}>
                 Submit
               </Button>
             </Form>

@@ -200,41 +200,25 @@ footer {
     margin-right: auto;
     margin-bottom: 20px;
 }
-// .carousel-item {
-//     height:32rem;
-//     background:#777;
-//     color:white;
-//     position: relative;
-//     background-position: center;
-//     background-size: 70%;
+
+// APARTMENT NEW
+// .new-form {
+//     align-self: center;
+//     padding-left: auto;
+//     padding-right: auto;
+//     width: 600px;
+//     padding-bottom: 20px;
 // }
-// .container {
-//     position:absolute;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     padding-bottom:50px;
-// }
-// .overlay-image {
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     top: 0;
-//     background-position: center;
-//     background-size: cover;
-// }
-/* SHOW TEST */
-// .carousel {
-//     width:60%;
-//     height: 700px;
-//     background-color: black;
-// }
-// .carousel-inner {
-//     height: 100%;
-//     width: 100%;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size:cover;
-//     display: flex;
-// }
+Form {
+    display: inline-block;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // gap: 10px;
+    // grid-auto-rows: minmax(100px, auto);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+.button-new {
+    align-self: center;
+}
