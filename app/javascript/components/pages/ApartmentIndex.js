@@ -17,7 +17,7 @@ class ApartmentIndex extends Component{
         {apartments && apartments.map(apartment => {
             return (
                 <section key={apartment.id} className="card">
-                    <div>
+                <div>
                   <FontAwesomeIcon icon={faHome} className="fa-icon" />
                     {apartment.street}
                 </div>

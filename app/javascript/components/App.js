@@ -7,6 +7,7 @@ import CreateAccount from './pages/CreateAccount'
 import ApartmentShow from './pages/ApartmentShow'
 import ShowTest from './pages/ShowTest'
 import ApartmentNew from './pages/ApartmentNew'
+import ProtectedIndex from './pages/ProtectedIndex'
 
 
 import {
