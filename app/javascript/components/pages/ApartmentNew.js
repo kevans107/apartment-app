@@ -162,7 +162,7 @@ class ApartmentNew extends Component {
                 />
               </FormGroup>
               <br />
-              <Button className="button-new" onClick={this.handleSubmit}>
+              <Button className="button" onClick={this.handleSubmit}>
                 Submit
               </Button>
             </Form>

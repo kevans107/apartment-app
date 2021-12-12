@@ -7,9 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class ProtectedIndex extends Component {
     render() {
         const { apartments } = this.props
+				console.log("protect apartments:",apartments)
         return (
             <div className="my-apartments">
-            <h1>My Listings</h1>
+            <h1>My Apartments</h1>
             <br />
             <br />
             <article className="cards">
@@ -31,11 +32,12 @@ class ProtectedIndex extends Component {
 													{apartment.pets}
 												</div>
 												<br />
-												<NavLink to={`/apartmentshow/${apartment.id}`}>
 													<Button className="button">
+														Edit Listing
+													</Button>
+													<Button onClick={() => this.props.deleteApartment(apartment.id)} className="button">
 														Delete Listing
 													</Button>
-												</NavLink>
 												</section>
                     )
                 })}
