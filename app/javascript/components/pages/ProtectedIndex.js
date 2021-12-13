@@ -32,9 +32,11 @@ class ProtectedIndex extends Component {
 													{apartment.pets}
 												</div>
 												<br />
+												<NavLink to={`/editapartment/${apartment.id}`}>
 													<Button className="button">
 														Edit Listing
 													</Button>
+												</NavLink>
 													<Button onClick={() => this.props.deleteApartment(apartment.id)} className="button">
 														Delete Listing
 													</Button>
