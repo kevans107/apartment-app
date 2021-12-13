@@ -8,7 +8,7 @@ import ApartmentShow from './pages/ApartmentShow'
 import ShowTest from './pages/ShowTest'
 import ApartmentNew from './pages/ApartmentNew'
 import ProtectedIndex from './pages/ProtectedIndex'
-
+import ApartmentEdit from './pages/ApartmentEdit'
 
 import {
   BrowserRouter as  Router,
@@ -44,6 +44,7 @@ class App extends Component {
     .then(payload => this.setState({apartments: payload}))
     .catch(errors => console.log("index errors:", errors))
   }
+
   createApartment = (newApartment) => {
     fetch("/apartments", {
       body: JSON.stringify(newApartment),
@@ -61,6 +62,20 @@ class App extends Component {
     .then(() => this.readApartment())
     .catch(errors => console.log("create errors:", errors))
   }
+
+  editApartment = (editedApartment, id) => {
+    fetch(`http://localhost:3000/apartments/${id}`, {
+      body: JSON.stringify(editedApartment),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+    .then((response) => response.json())
+    .then((payload) => this.readApartment())
+    .catch((errors) => console.log(errors))
+  }
+
   deleteApartment = (id) => {
     fetch(`apartments/${id}`, {
       headers: {
@@ -96,7 +111,7 @@ class App extends Component {
           {this.props.logged_in &&
             <Route path="/myapartments" render={(props) => {
               let apartments = this.state.apartments.filter(a => a.user_id === this.props.current_user.id)
-              return <ProtectedIndex apartments={apartments} deleteApartment={this.deleteApartment} />
+              return <ProtectedIndex apartments={apartments} deleteApartment={this.deleteApartment} editApartment={this.editApartment} />
             }}/>
           }
           {this.props.logged_in &&
@@ -104,6 +119,13 @@ class App extends Component {
               return <ApartmentNew createApartment={this.createApartment} current_user={this.props.current_user} />
             }}/>
           }
+          {this.props.logged_in &&
+            <Route path="/editapartment/:id" render={ (props) => {
+              let id = +props.match.params.id
+              let apartment = this.state.apartments.find(a => a.id === id)
+              return <ApartmentEdit apartment={apartment} current_user={this.props.current_user} />
+            }}/>
+            }
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/showTest" component={ShowTest} />
         </Switch>
